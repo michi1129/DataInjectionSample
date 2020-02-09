@@ -13,3 +13,11 @@ target 'DataInjectionSample' do
   end
 
 end
+
+plugin 'cocoapods-keys', {
+  :project => "DataInjectionSample",
+  :keys => [
+    "ValueAaa",
+  ]
+}
+
