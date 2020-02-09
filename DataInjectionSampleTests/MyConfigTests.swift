@@ -16,8 +16,8 @@ class MyConfigTests: XCTestCase {
         XCTAssertNotEqual("", config.constantValue)
     }
     
-//    func test値が想定通りか() {
-//        let config = MyConfig()
-//        XCTAssertEqual("abc", config.constantValue)
-//    }
+    func test値が想定通りか() {
+        let config = MyConfig()
+        XCTAssertEqual("abc", config.constantValue)
+    }
 }
