@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Keys
 
 @testable import DataInjectionSample
 
@@ -17,7 +18,12 @@ class MyConfigTests: XCTestCase {
     }
     
     func test値が想定通りか() {
-        let config = MyConfig()
-        XCTAssertEqual("abc", config.constantValue)
+        let keys = DataInjectionSampleKeys()
+        XCTAssertEqual("abc", keys.valueAaa)
     }
+
+//    func test値が想定通りか() {
+//        let config = MyConfig()
+//        XCTAssertEqual("abc", config.constantValue)
+//    }
 }
