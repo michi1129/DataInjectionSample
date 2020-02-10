@@ -12,7 +12,7 @@ jobs:
     - name: Install cocoapods-keys
       run: gem install cocoapods-keys
     - name: Inject secrets
-      run: pod keys set ValueAaa 'abcde$g'
+      run: pod keys set ValueAaa ${{ secrets.ValueAaa }}
     - name: Generate signed source code
       run: pod install
     - name: Test xcode project
