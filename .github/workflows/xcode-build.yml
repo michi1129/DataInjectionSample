@@ -1,0 +1,23 @@
+name: Xcode build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install cocoapods-keys
+      run: gem install cocoapods-keys
+    - name: Inject secrets
+      run: pod keys set ValueAaa '${{ secrets.ValueAaa }}'
+    - name: Generate signed source code
+      run: pod install
+    - name: Test xcode project
+      run: |
+        xcodebuild test \
+        -workspace "DataInjectionSample.xcworkspace" \
+        -scheme DataInjectionSample \
+        -destination "platform=iOS Simulator,name=iPhone 11"
